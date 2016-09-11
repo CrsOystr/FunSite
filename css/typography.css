@@ -1,0 +1,58 @@
+.fuchsia { color: #ae3aa4; }
+.seagreen { color: #adfede; }
+
+.midnight-blue { color: #156c91; }
+.screamingreen { color: #79ff9e; }
+
+.purple-heart { color: #6c01c0; }
+.caribbean-green { color: #42f5d6; }
+
+.shamrock { color: #5bcaa4; }
+.midnight-blue { color: #052a54; }
+
+.bittersweet { color: #fc7663; }
+.outer-space { color: #0e3c43; }
+
+.spring-green { color: #dcfacd; }
+.outer-space { color: #355f69; }
+
+.black { color: #182036; }
+.sea-green { color: #87dabf; }
+
+.chestnut { color: #7f343b; }
+.silver { color: #dfbbba; }
+
+.granny-smith-apple { color: #d1f9b2; }
+.tropical-rain-forest { color: #33644c; }
+
+.green-yellow { color: #fcf299; }
+.shadow { color: #6c5801; }
+
+.tropical-rain-forest { color: #447760; }
+.green-yellow { color: #f4feac; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    max-width: 50em;
+    line-height: 1.5;
+    padding: 1em 1em;
+    color: #ae3aa4;
+    background: #adfede;
+}
+
+section {
+    padding: 0em 2em;
+
+}
+
+h2 {
+    font-family: 'Shrikhand', cursive;
+ent    margin-top: 1em;
+}
+
+h1,
+h2,
+strong {
+    font-family: 'Shrikhand', cursive;
+}
