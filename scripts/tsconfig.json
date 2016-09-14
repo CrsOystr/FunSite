@@ -11,5 +11,5 @@
     "files": [
         "main.ts"
     ],
-    "compileOnSave": true,
+    "compileOnSave": true
 }
