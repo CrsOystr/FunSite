@@ -9,7 +9,8 @@
         "node_modules"
     ],
     "files": [
-        "main.ts"
+        "main.ts",
+        "three.ts"
     ],
     "compileOnSave": true
 }
