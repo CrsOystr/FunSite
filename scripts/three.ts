@@ -20,7 +20,7 @@ function init() {
     bufferLoader.load();
   }
   catch(e) {
-    alert('fuk ' + e);
+    alert('broke ' + e);
   }
 }
 
@@ -28,6 +28,7 @@ var startTime = 0;
 var eighthNoteTime = 0.42857142857;
 
 function finishedLoading(bufferList) {
+
   for (var bar = 0; bar < 2; bar++) {
     var time = startTime + bar * 8 * eighthNoteTime;
     // Play the bass (kick) drum on beats 1, 5

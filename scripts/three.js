@@ -13,7 +13,7 @@ function init() {
         bufferLoader.load();
     }
     catch (e) {
-        alert('fuk ' + e);
+        alert('broke ' + e);
     }
 }
 var startTime = 0;
