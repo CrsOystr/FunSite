@@ -16,21 +16,27 @@ function init() {
         alert('broke ' + e);
     }
 }
-var startTime = 0;
+var startTime = 1;
 var eighthNoteTime = 0.42857142857;
-function finishedLoading(bufferList) {
+var bufList;
+function playpause() {
+    var elem = document.getElementById('dummy');
+    elem.parentNode.removeChild(elem);
     for (var bar = 0; bar < 2; bar++) {
         var time = startTime + bar * 8 * eighthNoteTime;
-        playSound(bufferList[0], time);
-        playSound(bufferList[0], time + 2 * eighthNoteTime);
-        playSound(bufferList[0], time + 4 * eighthNoteTime);
-        playSound(bufferList[0], time + 6 * eighthNoteTime);
+        playSound(bufList[0], time);
+        playSound(bufList[0], time + 2 * eighthNoteTime);
+        playSound(bufList[0], time + 4 * eighthNoteTime);
+        playSound(bufList[0], time + 6 * eighthNoteTime);
         for (var i = 0; i < 8; ++i) {
-            playSound(bufferList[1], time + i * eighthNoteTime);
+            playSound(bufList[1], time + i * eighthNoteTime);
         }
-        playSound(bufferList[3], time + 2.1 * eighthNoteTime);
-        playSound(bufferList[3], time + 6 * eighthNoteTime);
+        playSound(bufList[3], time + 2.1 * eighthNoteTime);
+        playSound(bufList[3], time + 6 * eighthNoteTime);
     }
+}
+function finishedLoading(bufferList) {
+    bufList = bufferList;
 }
 function playSound(buffer, time) {
     var source = context.createBufferSource();

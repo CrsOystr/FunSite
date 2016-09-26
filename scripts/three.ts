@@ -24,28 +24,31 @@ function init() {
   }
 }
 
-var startTime = 0;
+var startTime = 1;
 var eighthNoteTime = 0.42857142857;
+var bufList;
+function playpause(){
+    var elem = document.getElementById('dummy');
+    elem.parentNode.removeChild(elem);  
+    for (var bar = 0; bar < 2; bar++) {
+      var time = startTime + bar * 8 * eighthNoteTime;
+      // Play the bass (kick) drum on beats 1, 5
+      playSound(bufList[0], time);
+      playSound(bufList[0], time + 2 * eighthNoteTime);
+      playSound(bufList[0], time + 4 * eighthNoteTime);
+      playSound(bufList[0], time + 6 * eighthNoteTime);
 
+      // Play the bass (kick) every eighth note.
+      for (var i = 0; i < 8; ++i) {
+        playSound(bufList[1], time + i * eighthNoteTime);
+    }
+      // Play the snare drum on beats 3, 7
+      playSound(bufList[3], time + 2.1 * eighthNoteTime);
+      playSound(bufList[3], time + 6 * eighthNoteTime);
+    }
+}
 function finishedLoading(bufferList) {
-
-  for (var bar = 0; bar < 2; bar++) {
-    var time = startTime + bar * 8 * eighthNoteTime;
-    // Play the bass (kick) drum on beats 1, 5
-    playSound(bufferList[0], time);
-    playSound(bufferList[0], time + 2 * eighthNoteTime);
-    playSound(bufferList[0], time + 4 * eighthNoteTime);
-    playSound(bufferList[0], time + 6 * eighthNoteTime);
-
-    // Play the bass (kick) every eighth note.
-    for (var i = 0; i < 8; ++i) {
-      playSound(bufferList[1], time + i * eighthNoteTime);
-  }
-
-    // Play the snare drum on beats 3, 7
-    playSound(bufferList[3], time + 2.1 * eighthNoteTime);
-    playSound(bufferList[3], time + 6 * eighthNoteTime);
-  }
+    bufList = bufferList;
 }
 
 function playSound(buffer, time) {
