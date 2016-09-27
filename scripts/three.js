@@ -1,5 +1,9 @@
 var context;
 var bufferLoader;
+var bufList;
+var startTime = 1;
+var eighthNoteTime = 0.42857142857;
+var tempoList = [];
 window.onload = init;
 function init() {
     try {
@@ -16,9 +20,22 @@ function init() {
         alert('broke ' + e);
     }
 }
-var startTime = 1;
-var eighthNoteTime = 0.42857142857;
-var bufList;
+function tempo() {
+    tempoList.push(performance.now());
+    if (tempoList.length >= 2) {
+        var newTempo = 0;
+        for (var i = 0; i < tempoList.length - 1; i++) {
+            newTempo = newTempo + (tempoList[i + 1] - tempoList[i]);
+        }
+        newTempo = newTempo / tempoList.length - 1;
+        var elem = document.getElementById('tempo');
+        elem.innerText = 'tempo: ' + 60000 / newTempo;
+        eighthNoteTime = newTempo / 1000;
+        if (tempoList[tempoList.length - 1] - tempoList[tempoList.length - 2] > 2000) {
+            tempoList = [];
+        }
+    }
+}
 function playpause() {
     var elem = document.getElementById('dummy');
     elem.parentNode.removeChild(elem);

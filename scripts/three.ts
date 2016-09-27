@@ -1,9 +1,14 @@
 var context;
 var bufferLoader;
+var bufList;
+var startTime = 1;
+var eighthNoteTime = 0.42857142857;
+let tempoList: number[] = [];
+
 window.onload = init;
+
 function init() {
   try {
-    // Fix up for prefixing
     (<any>window).AudioContext = (<any>window).AudioContext||(<any>window).webkitAudioContext;
     context = new AudioContext();
 
@@ -24,12 +29,30 @@ function init() {
   }
 }
 
-var startTime = 1;
-var eighthNoteTime = 0.42857142857;
-var bufList;
+function tempo(){
+    tempoList.push(performance.now());
+
+    if(tempoList.length >= 2){
+        let newTempo = 0;
+        for (let i = 0; i < tempoList.length-1; i++){
+            newTempo = newTempo + (tempoList[i+1] - tempoList[i]);
+            //console.log('lol' + newTempo);
+
+        }
+        newTempo = newTempo/tempoList.length-1;
+        let elem = document.getElementById('tempo');
+        elem.innerText = 'tempo: ' + 60000/newTempo;
+        eighthNoteTime = newTempo/1000;
+        if (tempoList[tempoList.length-1]-tempoList[tempoList.length-2] > 2000){
+            tempoList = [];
+        }
+    }
+
+}
+
 function playpause(){
-    var elem = document.getElementById('dummy');
-    elem.parentNode.removeChild(elem);  
+    let elem = document.getElementById('dummy');
+    elem.parentNode.removeChild(elem);
     for (var bar = 0; bar < 2; bar++) {
       var time = startTime + bar * 8 * eighthNoteTime;
       // Play the bass (kick) drum on beats 1, 5
@@ -47,6 +70,7 @@ function playpause(){
       playSound(bufList[3], time + 6 * eighthNoteTime);
     }
 }
+
 function finishedLoading(bufferList) {
     bufList = bufferList;
 }

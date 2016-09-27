@@ -9,15 +9,15 @@
     <button onclick='playpause()'>play/pause</button><br>
     <input id='input' value='100'>cent <button onclick='setDetune()'>set</button>
     <script>
-      // Temporary workaround until AudioContext is standardized
-      window.AudioContext = window.AudioContext || window.webkitAudioContext;
+        // Temporary workaround until AudioContext is standardized
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-      var context = new AudioContext();
-      var oscillator = context.createOscillator();
-      oscillator.start(0);
-      var connected = false;
+        var context = new AudioContext();
+        var oscillator = context.createOscillator();
+        oscillator.start(0);
+        var connected = false;
 
-      var playpause = function() {
+        var playpause = function() {
         if (!connected) {
           oscillator.connect(context.destination);
         }
@@ -25,13 +25,12 @@
           oscillator.disconnect();
         }
         connected = !connected;
-      };
+        };
 
-      var setDetune = function() {
+        var setDetune = function() {
         var input = document.getElementById('input');
         oscillator.detune.value = +input.value;
-      };
+        };
     </script>
-
 </body>
 </html>
