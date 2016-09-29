@@ -10,6 +10,7 @@
     ],
     "files": [
         "main.ts",
+        "game.ts",
         "three.ts"
     ],
     "compileOnSave": true
