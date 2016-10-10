@@ -26,12 +26,13 @@ function tempo() {
         for (var i = 0; i < tempoList.length - 1; i++) {
             newTempo = newTempo + (tempoList[i + 1] - tempoList[i]);
         }
-        newTempo = newTempo / tempoList.length - 1;
+        newTempo = newTempo / (tempoList.length - 1);
         var elem = document.getElementById('tempo');
-        elem.innerText = 'tempo: ' + 60000 / newTempo;
+        elem.innerText = 'Tempo: ' + 60000 / newTempo;
         eighthNoteTime = newTempo / 1000;
         if (tempoList[tempoList.length - 1] - tempoList[tempoList.length - 2] > 2000) {
             tempoList = [];
+            elem.innerText = 'Tempo';
         }
     }
 }
