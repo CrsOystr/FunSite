@@ -1,7 +1,6 @@
 var context;
 var bufferLoader;
 var bufList;
-var startTime = 1;
 var eighthNoteTime = 0.42857142857;
 let tempoList: number[] = [];
 
@@ -54,7 +53,7 @@ function playpause(){
     let elem = document.getElementById('dummy');
     elem.parentNode.removeChild(elem);
     for (var bar = 0; bar < 2; bar++) {
-      var time = startTime + bar * 8 * eighthNoteTime;
+      var time = context.currentTime + bar * 8 * eighthNoteTime;
       // Play the bass (kick) drum on beats 1, 5
       playSound(bufList[0], time);
       playSound(bufList[0], time + 2 * eighthNoteTime);

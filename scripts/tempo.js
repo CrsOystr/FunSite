@@ -1,7 +1,6 @@
 var context;
 var bufferLoader;
 var bufList;
-var startTime = 1;
 var eighthNoteTime = 0.42857142857;
 var tempoList = [];
 window.onload = init;
@@ -40,7 +39,7 @@ function playpause() {
     var elem = document.getElementById('dummy');
     elem.parentNode.removeChild(elem);
     for (var bar = 0; bar < 2; bar++) {
-        var time = startTime + bar * 8 * eighthNoteTime;
+        var time = context.currentTime + bar * 8 * eighthNoteTime;
         playSound(bufList[0], time);
         playSound(bufList[0], time + 2 * eighthNoteTime);
         playSound(bufList[0], time + 4 * eighthNoteTime);
