@@ -32,13 +32,13 @@ function tempo() {
         eighthNoteTime = newTempo / 1000;
         if (tempoList[tempoList.length - 1] - tempoList[tempoList.length - 2] > 2000) {
             tempoList = [];
-            elem.innerText = 'Tempo';
+            elem.innerText = 'Tap to set tempo';
         }
     }
 }
 function playpause() {
     var elem = document.getElementById('dummy');
-    elem.parentNode.removeChild(elem);
+    elem.innerText = "Sick";
     for (var bar = 0; bar < 2; bar++) {
         var time = context.currentTime + bar * 8 * eighthNoteTime;
         playSound(bufList[0], time);

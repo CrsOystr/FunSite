@@ -3,15 +3,38 @@
 <head>
 	<meta charset="utf-8">
 	<title>What Meme - Tempo</title>
-	<link rel="stylesheet" href="css/anim.css">
+	<style>
+	button {
+	    background-color: #2D882D;
+	    border: none;
+	    color: white;
+	    padding: 42px 42px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 24px;
+
+	    width: 100%;
+	    height: 50%;
+	}
+	html, body {
+	    margin: 0;
+	    padding: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+	#container {
+    width:100%;
+    height:100%;
+    position:fixed;
+}
+</style>
 </head>
 <body>
-	<button id='tempo' onclick='tempo()'>Tempo</button><br>
-	<button id='dummy' onclick='playpause()'>PLAY</button><br>
-
-    <canvas id="canvas" style="width:100%; height:100%">
-    </canvas>
-
+	<div id="container">
+		<button id='tempo' onclick='tempo()'>Tap to set tempo</button><br>
+		<button id='dummy' style="background-color: #AA3939" onclick='playpause()'>Tap to play</button><br>
+	</div>
  	<script src="scripts/tempo.js"></script>
 </body>
 </html>

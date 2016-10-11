@@ -44,7 +44,7 @@ function tempo(){
         eighthNoteTime = newTempo/1000;
         if (tempoList[tempoList.length-1]-tempoList[tempoList.length-2] > 2000){
             tempoList = [];
-            elem.innerText = 'Tempo';
+            elem.innerText = 'Tap to set tempo';
         }
     }
 
@@ -52,7 +52,7 @@ function tempo(){
 
 function playpause(){
     let elem = document.getElementById('dummy');
-    elem.parentNode.removeChild(elem);
+    elem.innerText = "Sick";
     for (var bar = 0; bar < 2; bar++) {
       var time = context.currentTime + bar * 8 * eighthNoteTime;
       // Play the bass (kick) drum on beats 1, 5
