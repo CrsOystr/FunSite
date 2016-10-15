@@ -12,7 +12,7 @@
         "main.ts",
         "game.ts",
         "phase.ts",
-        "three.ts",
+        "beatbox.ts",
         "tempo.ts"
     ],
     "compileOnSave": true
