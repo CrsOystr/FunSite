@@ -226,7 +226,6 @@ function onMouseMove(event) {
 }
 function initialize() {
     console.log("LOADED");
-    window.AudioContext = window.AudioContext || window.webkitAudioContext;
     audioContext = new AudioContext();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
@@ -254,8 +253,12 @@ function initialize() {
     };
     timerWorker.postMessage({ "interval": lookahead });
     render();
+}
+function startButton() {
+    kick.play(0, noteLength);
     play();
+    document.getElementById('startButton').style.visibility = 'hidden';
 }
 window.addEventListener('mousemove', onMouseMove, false);
 window.addEventListener('mouseup', onMouseUp);
-window.addEventListener("load", initialize);
+window.addEventListener('load', initialize);

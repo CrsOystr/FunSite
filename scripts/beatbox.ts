@@ -304,10 +304,14 @@ function initialize(){
   timerWorker.postMessage({"interval":lookahead});
 
   render();
-  play();
 }
 
+function startButton(){
+    kick.play(0, noteLength);
+    play();
+    document.getElementById('startButton').style.visibility = 'hidden';
+}
 //handle adding of event listeners
 window.addEventListener( 'mousemove', onMouseMove, false );
 window.addEventListener( 'mouseup', onMouseUp);
-window.addEventListener("load", initialize );
+window.addEventListener( 'load', initialize );
