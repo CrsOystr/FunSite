@@ -226,9 +226,7 @@ function onMouseMove(event) {
 }
 function initialize() {
     console.log("LOADED");
-    audioContext = new AudioContext()
-    || window.webkitAudioContext
-    || false;
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
     scene.add(light);
