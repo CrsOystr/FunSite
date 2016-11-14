@@ -261,4 +261,5 @@ function startButton() {
 }
 window.addEventListener('mousemove', onMouseMove, false);
 window.addEventListener('mouseup', onMouseUp);
+window.addEventListener('touchend', onMouseUp);
 window.addEventListener('load', initialize);
