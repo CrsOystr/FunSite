@@ -272,7 +272,9 @@ function onMouseMove( event ) {
 function initialize(){
   console.log("LOADED");
   //webaudio init
-  audioContext = new AudioContext();
+  audioContext = new AudioContext()
+    || window.webkitAudioContext // Safari and old versions of Chrome
+    || false;
 
   //threejs init
   renderer.setSize( window.innerWidth, window.innerHeight );
