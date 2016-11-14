@@ -220,6 +220,15 @@ function onMouseUp(event) {
         beatboxes[Math.round(intersect[0].object.position.y / 2)][Math.round(((intersect[0].object.position.x + columns) / 2) - 1)].toggleActive();
     }
 }
+function onTouchUp(event) {
+    mouse.x = (event.changedTouches[0].clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.changedTouches[0].clientY / window.innerHeight) * 2 + 1;
+    raycaster.setFromCamera(mouse, camera);
+    var intersect = raycaster.intersectObjects(scene.children);
+    if (intersect.length > 0) {
+        beatboxes[Math.round(intersect[0].object.position.y / 2)][Math.round(((intersect[0].object.position.x + columns) / 2) - 1)].toggleActive();
+    }
+}
 function onMouseMove(event) {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -261,5 +270,5 @@ function startButton() {
 }
 window.addEventListener('mousemove', onMouseMove, false);
 window.addEventListener('mouseup', onMouseUp);
-window.addEventListener('touchend', onMouseUp);
+window.addEventListener('touchend', onTouchUp);
 window.addEventListener('load', initialize);
