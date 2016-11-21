@@ -3,21 +3,56 @@
 <head>
 	<meta charset="utf-8">
 	<title>What Meme</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Shrikhand" rel="stylesheet">
+	<style>
+	html, body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.grid-container {
+        width : 100%;
+		height: 100%;
+    }
+	.piece {
+	    height: 50%;
+		width: 50%;
+		float: left;
+		text-align: center;
+		font-size: 10vw;
+		font-family: 'Shrikhand', cursive;
+		display: table;
+	}
+	a{
+		vertical-align: middle;
+	    text-decoration: none;
+	    color: #e5f4e3;
+		display: table-cell; vertical-align: middle;
+	}
+	a:hover{
+	    color: #FFFFFF;
+	}
+	</style>
+
+	<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-<body id="home" style="background-color:#c9cad9">
-	<section id="mint" style="background-color: #a3bcf9;">
-		<h1><a href="anim.html">Mint<a></h1>
-	</section>
-	<section id="choco" style="background-color: #7796cb;">
-		<h1><a href="beatboxes.html">Choco<a></h1>
-	</section>
-	<section id="chip" style="background-color: #576490;">
-		<h1><a href="tempo.html">Chip<a></h1>
-	</section>
+<body id="home" style="background-color:#e5f4e3">
+	<div class="grid-container">
+		<div class="piece" style="background-color: #a3bcf9;">
+			<a href="anim.html">Mint<a>
+		</div>
+		<div class="piece" style="background-color: #c9cad9;">
+			<a href="beatboxes.html">Choco<a>
+		</div>
+		<div class="piece" style="background-color: #7796cb;">
+			<a href="tempo.html">Chip<a>
+		</div>
+		<div class="piece" style="background-color: #576490;">
+			<a href="game.html">!!!!<a>
+		</div>
+	</div>
 </body>
 </html>
