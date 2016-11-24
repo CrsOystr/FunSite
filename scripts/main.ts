@@ -64,7 +64,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var spawn = 0;
 
-function update(progress) {
+function update1(progress) {
   spawn += progress;
   if(spawn > 30){
     spawn = 0;
