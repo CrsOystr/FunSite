@@ -90,6 +90,8 @@ function draw1() {
           ctx.beginPath();
           ctx.moveTo(noders[i].x,noders[i].y);
           ctx.lineTo(noders[j].x,noders[j].y);
+          ctx.strokeStyle = 'rgba(' + Math.floor((noders[i].x % 255)) + ',' +
+                           Math.floor((noders[i].x % 255)) + ', 0, '+noders[i].age+ ')';
           ctx.stroke();
         }
       }
