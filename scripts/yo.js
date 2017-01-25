@@ -3,7 +3,7 @@ $(function () {
     window.requestAnimationFrame(loop);
 });
 $(document).click(function (e) {
-    bubbles.unshift(new Bubble(e.pageX, e.pageY));
+    console.log('click');
 });
 var Noder = (function () {
     function Noder(x, y, xVel, yVel) {
@@ -51,6 +51,10 @@ function update(progress) {
     }
     for (var i = 0; i < noders.length; i++) {
         noders[i].ageMe(progress);
+        if (noders[i].x < -20 || noders[i].y < -20 ||
+            noders[i].x > canvas.width + 20 || noders[i].y > canvas.height + 20) {
+            noders.splice(i, 1);
+        }
     }
 }
 function draw1() {
