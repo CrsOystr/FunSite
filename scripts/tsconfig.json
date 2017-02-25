@@ -14,7 +14,8 @@
         "phase.ts",
         "beatbox.ts",
         "tempo.ts",
-        "yo.ts"
+        "yo.ts",
+        "bw.ts"
     ],
     "compileOnSave": true
 }
